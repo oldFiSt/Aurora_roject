@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 16.0.0, 2026-09-09T20:05:17. -->
+<!-- Written by QtCreator 16.0.0, 2026-09-10T00:27:20. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -349,7 +349,7 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="bool" key="MerRunConfiguration.DebugBypassOpenSslArmCapEnabled">true</value>
     <value type="bool" key="MerRunConfiguration.KeepUserData">true</value>
-    <value type="QString" key="MerRunConfiguration.QmlLiveBenchWorkspace">C:/Users/Egorka/untitled16</value>
+    <value type="QString" key="MerRunConfiguration.QmlLiveBenchWorkspace">C:/Users/Egorka/untitled17</value>
     <value type="bool" key="MerRunConfiguration.QmlLiveEnabled">false</value>
     <value type="int" key="MerRunConfiguration.QmlLiveIpcPort">-1</value>
     <value type="int" key="MerRunConfiguration.QmlLiveOptions">3</value>
@@ -360,10 +360,10 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
     <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ru.template.untitled16 (on %{Device:Name})</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">ru.template.untitled16 (on %{Device:Name})2</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QmakeProjectManager.MerRunConfiguration:</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/Egorka/untitled16/ru.template.untitled16.pro</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/Egorka/untitled17/ru.template.untitled16.pro</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="int" key="RemoteLinux.EnvironmentAspect.Version">1</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>

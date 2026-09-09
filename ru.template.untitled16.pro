@@ -3,14 +3,16 @@ TARGET = ru.template.untitled16
 CONFIG += \
     auroraapp
 
-QT += sql
+QT += sql network
 
 SOURCES += \
     src/databasemanager.cpp \
+    src/temperaturereceiver.cpp \
     src/main.cpp
 
 HEADERS += \
-    src/databasemanager.h
+    src/databasemanager.h \
+    src/temperaturereceiver.h
 
 DISTFILES += \
     rpm/ru.template.untitled16.spec

@@ -7,7 +7,7 @@ Name=Template
 Name[ru]=Шаблон
 
 [X-Application]
-Permissions=
+Permissions=Internet
 OrganizationName=ru.template
 ApplicationName=untitled16
 ExecDBus=/usr/bin/ru.template.untitled16
