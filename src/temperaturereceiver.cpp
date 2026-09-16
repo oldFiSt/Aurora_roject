@@ -15,45 +15,37 @@ TemperatureReceiver::TemperatureReceiver(QObject *parent)
         m_socket,
         &QTcpSocket::readyRead,
         this,
-        &TemperatureReceiver::readData
-    );
+        &TemperatureReceiver::readData);
 
     connect(
         m_socket,
         &QTcpSocket::connected,
         this,
-        &TemperatureReceiver::socketConnected
-    );
+        &TemperatureReceiver::socketConnected);
 
     connect(
         m_socket,
         &QTcpSocket::disconnected,
         this,
-        &TemperatureReceiver::socketDisconnected
-    );
+        &TemperatureReceiver::socketDisconnected);
 
-    // Совместимый вариант для Qt 5, используемого в Aurora OS.
     connect(
         m_socket,
         SIGNAL(error(QAbstractSocket::SocketError)),
         this,
-        SLOT(socketError(QAbstractSocket::SocketError))
-    );
+        SLOT(socketError(QAbstractSocket::SocketError)));
 
     connect(
         m_reconnectTimer,
         &QTimer::timeout,
         this,
-        &TemperatureReceiver::tryReconnect
-    );
+        &TemperatureReceiver::tryReconnect);
 }
-
 
 bool TemperatureReceiver::connected() const
 {
     return m_connected;
 }
-
 
 void TemperatureReceiver::connectToServer(
     const QString &host,
@@ -62,8 +54,7 @@ void TemperatureReceiver::connectToServer(
     if (host.isEmpty() || port <= 0 || port > 65535)
     {
         emit errorOccurred(
-            QStringLiteral("Некорректный адрес или порт")
-        );
+            QStringLiteral("Некорректный адрес или порт"));
 
         return;
     }
@@ -80,7 +71,6 @@ void TemperatureReceiver::connectToServer(
     tryReconnect();
 }
 
-
 void TemperatureReceiver::disconnectFromServer()
 {
     m_autoReconnect = false;
@@ -91,7 +81,6 @@ void TemperatureReceiver::disconnectFromServer()
 
     setConnected(false);
 }
-
 
 void TemperatureReceiver::tryReconnect()
 {
@@ -108,10 +97,8 @@ void TemperatureReceiver::tryReconnect()
 
     m_socket->connectToHost(
         m_host,
-        m_port
-    );
+        m_port);
 }
-
 
 void TemperatureReceiver::socketConnected()
 {
@@ -123,7 +110,6 @@ void TemperatureReceiver::socketConnected()
     setConnected(true);
 }
 
-
 void TemperatureReceiver::socketDisconnected()
 {
     qDebug()
@@ -134,7 +120,6 @@ void TemperatureReceiver::socketDisconnected()
     if (m_autoReconnect)
         m_reconnectTimer->start();
 }
-
 
 void TemperatureReceiver::socketError(
     QAbstractSocket::SocketError error)
@@ -159,12 +144,10 @@ void TemperatureReceiver::socketError(
     }
 }
 
-
 void TemperatureReceiver::readData()
 {
     m_buffer.append(
-        m_socket->readAll()
-    );
+        m_socket->readAll());
 
     while (m_buffer.contains('\n'))
     {
@@ -176,8 +159,7 @@ void TemperatureReceiver::readData()
 
         m_buffer.remove(
             0,
-            end + 1
-        );
+            end + 1);
 
         if (line.isEmpty())
             continue;
@@ -196,7 +178,6 @@ void TemperatureReceiver::readData()
             continue;
         }
 
-        // Рабочий диапазон LM35.
         if (temperature < -55.0 ||
             temperature > 150.0)
         {
@@ -213,11 +194,9 @@ void TemperatureReceiver::readData()
             << "C";
 
         emit temperatureReceived(
-            temperature
-        );
+            temperature);
     }
 }
-
 
 void TemperatureReceiver::setConnected(
     bool connected)
