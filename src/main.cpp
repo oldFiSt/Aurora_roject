@@ -15,10 +15,6 @@ int main(int argc, char *argv[])
         Aurora::Application::createView()
     );
 
-    // =========================================
-    // SQLite / данные приложения
-    // =========================================
-
     DatabaseManager databaseManager;
 
     view->rootContext()->setContextProperty(
